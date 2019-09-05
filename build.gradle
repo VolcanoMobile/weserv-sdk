@@ -21,8 +21,11 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-def Properties properties = new Properties()
-properties.load(project.rootProject.file("local.properties").newDataInputStream())
+Properties properties = new Properties()
+File file = rootProject.file('local.properties')
+if (file.exists()) {
+    properties.load(file.newDataInputStream())
+}
 
 bintray {
     user = properties.getProperty('bintrayUser')
