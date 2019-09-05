@@ -1,0 +1,39 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.50'
+    id "com.jfrog.bintray" version "1.8.4"
+}
+
+group 'net.volcanomobile'
+version '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+def Properties properties = new Properties()
+properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
+bintray {
+    user = properties.getProperty('bintrayUser')
+    key = properties.getProperty('bintrayApiKey')
+    configurations = ['archives']
+    pkg {
+        repo = 'public'
+        name = 'weservsdk'
+        userOrg = 'volcanomobile'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/VolcanoMobile/weserv-sdk.git'
+        githubRepo = 'VolcanoMobile/weserv-sdk'
+    }
+}
