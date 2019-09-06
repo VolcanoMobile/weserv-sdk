@@ -8,8 +8,8 @@ class SizeBuilder internal constructor() {
     private var width: Int? = null
     private var height: Int? = null
 
-    fun width(lambda: () -> Int) { this.width = lambda() }
-    fun height(lambda: () -> Int) { this.height = lambda() }
+    fun width(lambda: () -> Int) { width = lambda() }
+    fun height(lambda: () -> Int) { height = lambda() }
 
     fun build() = Size(width, height)
 }

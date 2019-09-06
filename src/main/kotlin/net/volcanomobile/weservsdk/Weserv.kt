@@ -7,10 +7,10 @@ private const val BASE_URL = "https://images.weserv.nl/?url="
 
 data class Weserv internal constructor(
     val url: String,
-    val useSsl: Boolean,
     val size: Size?,
     val fit: Fit?,
-    val withoutEnlargement: Boolean
+    val withoutEnlargement: Boolean,
+    val crop: Crop?
 )
 
 fun weserv(lambda: WeservBuilder.() -> Unit) =
@@ -18,8 +18,6 @@ fun weserv(lambda: WeservBuilder.() -> Unit) =
 
 fun Weserv.buildUrl() =
     StringBuilder(BASE_URL).apply {
-        if (useSsl)
-            append("ssl:")
 
         append(URLEncoder.encode(url, "UTF-8"))
 
@@ -31,5 +29,8 @@ fun Weserv.buildUrl() =
 
         if (withoutEnlargement)
             append("&we")
+
+        if (crop != null)
+            append(crop.toQueryString())
 
     }.toString()
