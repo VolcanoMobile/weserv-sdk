@@ -2,7 +2,6 @@ package net.volcanomobile.weservsdk.builder
 
 import net.volcanomobile.weservsdk.*
 import net.volcanomobile.weservsdk.WeservDsl
-import java.net.URI
 
 @WeservDsl
 class WeservBuilder internal constructor() {
