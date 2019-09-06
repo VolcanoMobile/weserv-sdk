@@ -13,10 +13,7 @@ data class Weserv internal constructor(
     val crop: Crop?
 )
 
-fun weserv(lambda: WeservBuilder.() -> Unit) =
-    WeservBuilder().apply(lambda).build()
-
-fun Weserv.buildUrl() =
+private fun Weserv.buildUrl() =
     StringBuilder(BASE_URL).apply {
 
         append(URLEncoder.encode(url, "UTF-8"))
@@ -34,3 +31,8 @@ fun Weserv.buildUrl() =
             append(crop.toQueryString())
 
     }.toString()
+
+
+// DSL public entry point
+fun weserv(lambda: WeservBuilder.() -> Unit) =
+    WeservBuilder().apply(lambda).build().buildUrl()
