@@ -6,4 +6,4 @@ branches:
     - /^release.*$/
 
 jdk:
-  - oraclejdk8
+  - oraclejdk11
