@@ -19,5 +19,5 @@ allprojects {
 Then, add the library to your module `build.gradle`
 ```gradle
 dependencies {
-    compile 'net.volcanomobile:weservsdk:0.2'
+    implementation 'net.volcanomobile:weservsdk:0.2'
 }
