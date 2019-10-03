@@ -1,6 +1,6 @@
 # weserv SDK
 
-[![Download](https://api.bintray.com/packages/volcanomobile/public/weservsdk/images/download.svg?version=0.1) ](https://bintray.com/volcanomobile/public/weservsdk/0.1/link)
+[![Download](https://api.bintray.com/packages/volcanomobile/public/weservsdk/images/download.svg?version=0.2) ](https://bintray.com/volcanomobile/public/weservsdk/0.2/link)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Build Status](https://travis-ci.org/VolcanoMobile/weserv-sdk.svg?branch=master)](https://travis-ci.org/VolcanoMobile/weserv-sdk)
 
